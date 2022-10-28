@@ -1,7 +1,7 @@
-divide = lambda  number,number2 :   number / number2   
-multiply = lambda  number,number2 :   number * number2   
-subtract = lambda  number,number2 :   number - number2   
-add = lambda  number,number2 :  print(f"Result  🎉 : {number + number2 } ")     
+from add import *
+from subtract import *
+from divide import *
+from multiply import *
 def showOptions(x):
            for keys, values in dictionary.items():
                     print(f"{keys}.   {values} ")
