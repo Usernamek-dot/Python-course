@@ -1,6 +1,3 @@
-from subtract import *
-from divide import *
-from multiply import *
 from validateNumber import *
 def selectingOption():
    while True:
@@ -15,12 +12,18 @@ def selectingOption():
       else:
             if select == 1: #add
                print("You are gonna add.  🔗 ")
-               validateNum()
+               validateNum(1)
                continue
             elif select == 2: #subtract
                print("You are gonna subtract 📷📸 ")   
+               validateNum(2)
+               continue
             elif select == 3: #multiply
                print("You are gonna multiply ⚔")   
+               validateNum()
+               continue
             elif select == 4: #divide
                print("You are gonna divide 📲 ")   
+               validateNum()
+               continue
             break
