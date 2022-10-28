@@ -1,1 +1,1 @@
-multiply = lambda  number,number2 :   number * number2   
+multiply = lambda  number,number2 :    print(f"Result  🎉 : {number * number2 } ")
