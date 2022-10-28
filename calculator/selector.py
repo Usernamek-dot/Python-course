@@ -20,10 +20,10 @@ def selectingOption():
                continue
             elif select == 3: #multiply
                print("You are gonna multiply ⚔")   
-               validateNum()
+               validateNum(3)
                continue
             elif select == 4: #divide
                print("You are gonna divide 📲 ")   
-               validateNum()
+               validateNum(4)
                continue
             break
