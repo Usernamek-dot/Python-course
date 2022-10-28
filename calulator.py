@@ -12,8 +12,9 @@ def selectingOption():
       except ValueError:
          print("🩸Invalid data, try again.")   
          continue
-      except len(select) == 1:
-         print("🩸Only must contain 1 character.")
+      if select not in range(1,5): 
+         print("🩸Only must contain 1  character to the options.")
+         continue
       else:
          print("Success  🎋")      
          break
