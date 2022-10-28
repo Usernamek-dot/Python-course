@@ -1,3 +1,4 @@
+from audioop import mul
 from add import *
 from subtract import *
 from divide import *
@@ -10,5 +11,9 @@ def validateNum(x):
                add(num,num2)
           elif x == 2:
                subtract(num,num2)
+          elif x == 3:
+               multiply(num,num2)
+          elif x == 4:
+               divide(num,num2)
       except ValueError :
            print("🩸 Just a number.  Are you sure it`s a number ?")
