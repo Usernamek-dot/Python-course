@@ -6,4 +6,4 @@
 
   #pip list  ----> to check dependencies
 
-  
+  #deactivate ---> just type the word as seen
