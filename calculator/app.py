@@ -12,3 +12,4 @@ print ("++++++++++ 🐍  CALCULATOR 🐍++++++++++")
 showOptions(dictionary)
 selectingOption()
 
+# while not valora.isdigit()
