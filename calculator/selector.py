@@ -26,4 +26,6 @@ def selectingOption():
                print("You are gonna divide 📲 ")   
                validateNum(4)
                continue
-            break
+            else:
+               print("Wanna go out? 🧶 y/n")
+               break
