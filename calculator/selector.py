@@ -1,15 +1,16 @@
 from validateNumber import *
 def selectingOption():
-   while True:
-      try:
-            select =  int(input("🧩  To select an option, type the corresponding number : "))
-      except ValueError:
-         print("🩸Invalid data, try again.")   
-         continue
-      if select not in range(1,5): 
-         print("🩸Only must contain 1  character to the corresponding options.")
-         continue
-      else:
+   try:
+      while True:
+         try:
+               select =  int(input("🧩  To select an option, type the corresponding number  or press  CTRL+C to exit : "))
+         except ValueError:
+            print("🩸Invalid data, try again.")   
+            continue
+         if select not in range(1,5): 
+            print("🩸Only must contain 1  character to the corresponding options.")
+            continue
+         else:
             if select == 1: #add
                print("You are gonna add.  🔗 ")
                validateNum(1)
@@ -29,3 +30,6 @@ def selectingOption():
             else:
                print("Wanna go out? 🧶 y/n")
                break
+   except KeyboardInterrupt:
+      print("Game over  🎮")
+      pass       
