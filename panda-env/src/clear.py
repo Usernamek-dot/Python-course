@@ -1,8 +1,13 @@
 from app import df
-df = df.drop_duplicates(["name"])  
+import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
+df.drop(['Name', 'Lastname'], axis='columns', inplace=True)
+df
+df = df.drop_duplicates(['Name','Lastname'])
 print(df.to_string())
-df["Full Name"] = df["Name"] + "  " + df["Lastname"]
-df.drop(["Name","Lastname"],axis="columns",inplace=True)
-df.duplicated["Name"]
-df.plot(kind="bar",x="Fullname",y="Name")#pip install matplot
+# df = df.rename(columns={'nota Periodo III':'Nota Periodo III'})
+# df
+df.plot(kind='bar', x = 'Fullname', y = 'Average')
+plt.show()
 df.style.highlight_max()
+df.style.background_gradient()
