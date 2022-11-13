@@ -9,6 +9,7 @@ window = tkinter.Tk()
 #style window
 window.geometry("900x600")
 window.title("Diagram")
+window.configure(background="#130f40")
 labelTitle = tkinter.Label(window,text="Diagram label",font=("Poppins",24),padx=20,pady=20,fg="#2c3e50")
 labelTitle.grid(row=0,column=0,pady=20)
 #add label  & entry
