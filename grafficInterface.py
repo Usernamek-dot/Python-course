@@ -1,3 +1,9 @@
 import tkinter
 window = tkinter.Tk()
-window.mainloop()
+window.geometry("900x600")
+
+
+
+
+
+window.mainloop() # always at the end
