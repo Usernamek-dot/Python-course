@@ -1,4 +1,6 @@
 import tkinter
+def printt():
+     print("This is a function.", entryItem.get())
 window = tkinter.Tk()
 #style window
 window.geometry("900x600")
@@ -16,7 +18,7 @@ labeltem2.pack()
 entryItem2 = tkinter.Entry(window,font=("Poppins",19))
 entryItem2.pack(pady=15)
 #button
-btnSubmit = tkinter.Button(window,text="Submit",font=("Poppins",14,"bold"),bg="#e67e22")
+btnSubmit = tkinter.Button(window,text="Submit",font=("Poppins",14,"bold"),bg="#e67e22",command=printt)
 btnSubmit.pack()
 # always at the end
 window.mainloop() 
