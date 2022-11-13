@@ -1,6 +1,9 @@
 import tkinter
+from tkinter import messagebox
 def printt():
-     print("This is a function.", entryItem.get())
+     print(f"This is a function. {entryItem.get()} ")
+     message["text"] = entryItem.get()
+     messagebox.showinfo(message="Item ="+ entryItem.get(),title="ITEM")
 window = tkinter.Tk()
 #style window
 window.geometry("900x600")
@@ -17,6 +20,10 @@ labeltem2 = tkinter.Label(window,text="Item",font=("Poppins",14),padx=10,pady=10
 labeltem2.pack()
 entryItem2 = tkinter.Entry(window,font=("Poppins",19))
 entryItem2.pack(pady=15)
+#add label  & entry
+message = tkinter.Label(window,text="",font=("Poppins",14))
+message.pack()
+message = tkinter.Entry(window,text="",font=("Poppins",14))
 #button
 btnSubmit = tkinter.Button(window,text="Submit",font=("Poppins",14,"bold"),bg="#e67e22",command=printt)
 btnSubmit.pack()
