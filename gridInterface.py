@@ -2,6 +2,7 @@ import tkinter
 from tkinter import messagebox
 import sqlite3
 def save():
+     product = entryItem.get()
      conexion = sqlite3.connect("db.db")
      conexion.execute("insert into sales(product,price,quantity,date) values('Product1',' 2300','3',' 1990-12-03')")
      conexion.commit()
