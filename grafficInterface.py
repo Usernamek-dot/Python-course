@@ -1,9 +1,10 @@
 import tkinter
 from tkinter import messagebox
 def printt():
-     print(f"This is a function. {entryItem.get()} ")
-     message["text"] = entryItem.get()
-     messagebox.showinfo(message="Item ="+ entryItem.get(),title="ITEM")
+     if entryItem.get() == "" or entryItem2.get() == "":
+          messagebox.showwarning(message="Fill all out",title="Warning")
+     else:
+          message["text"]= entryItem.get()
 window = tkinter.Tk()
 #style window
 window.geometry("900x600")
