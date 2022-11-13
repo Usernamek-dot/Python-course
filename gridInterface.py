@@ -1,10 +1,19 @@
 import tkinter
 from tkinter import messagebox
-def printt():
+import sqlite3
+def save():
+     conexion = sqlite3.connect("db.db")
+     conexion.execute("insert into sales(product,price,quantity,date) values('Product1',' 2300','3',' 1990-12-03')")
+     conexion.commit()
+     conexion.close()
+     cursor = conexion.cursor()#read data
+     pass
+def validate():
      if entryItem.get() == "" or entryItem2.get() == "":
           messagebox.showwarning(message="Fill all out",title="Warning")
      else:
           message["text"]= entryItem.get()
+          save()
 window = tkinter.Tk()
 #style window
 window.geometry("900x600")
@@ -27,7 +36,7 @@ message = tkinter.Label(window,text="",font=("Poppins",14))
 message.grid(row=5,column=1)
 message = tkinter.Entry(window,text="",font=("Poppins",14))
 #button
-btnSubmit = tkinter.Button(window,text="Submit",font=("Poppins",14,"bold"),bg="#e67e22",command=printt)
+btnSubmit = tkinter.Button(window,text="Submit",font=("Poppins",14,"bold"),bg="#e67e22",command=validate)
 btnSubmit.grid(row=3,column=1)
 # always at the end
 window.mainloop() 
