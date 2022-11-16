@@ -30,6 +30,9 @@ class Hotel:
 class HotelVIP (Hotel):
      pass
 class HotelTurist(Hotel):
+     def __init__(self, numRooms, parkingLot, spa,jaccuzzi):
+          super().__init__(numRooms, parkingLot, spa,jaccuzzi)
+          self.jaccuzzi = jaccuzzi
      pass
 intercontinental = Hotel(850,False,"Two")
 miHotelito = Hotel(300,2,5) 
