@@ -6,12 +6,16 @@ class Patients:
           self.__bloodType = bloodType
           #gets
      def getName (self):
+          print("Name: 🎇 ")
           return self.__name
      def getAge (self):
+          print("Age: 🎇 ")
           return self.__age
      def getId (self):
+          print("Id : 🎇")
           return self.__idd
      def getBloodType (self):
+          print("Blood type : 🎇")
           return self.__bloodType
           #sets
      def setName(self,name):
@@ -21,3 +25,4 @@ class Patients:
           #deletes
      def delBloodType(self):
           del self.__bloodType
+
