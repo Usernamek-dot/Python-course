@@ -4,8 +4,9 @@ import sqlite3
 import datetime
 import pytz
 window = tkinter.Tk()
-window.geometry('1000x600') 
+window.geometry('560x600') 
 window.title("USERS")
+window.configure(bg="#485460")
 def validateData():
     if  idEntry.get().isdigit() or not nameEntry.get() == "" or not ageEntry.get().isdigit() or not countryEntry.get() or not phoneEntry.get().isdigit()or not dateEntry.get().isdigit() :
         messagebox.showinfo(
@@ -47,47 +48,51 @@ def searchData():
         else:
             searchLabel['text'] = "😲Not found."                
         con.close()
+#ttitle
+titleLabel = tkinter.Label(window, text="Users Form", font=('Verdana', 20, 'bold'), bg='#485460',fg="#95a5a6")
+titleLabel.grid(row=0, column=1, padx=20)
+
 #id
-idLabel = tkinter.Label(window, text="Type your id", font=('Verdana', 19, 'bold'), bg='#5FA8D3')
+idLabel = tkinter.Label(window, text="Type your id", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
 idLabel.grid(row=5, column=0, pady=20)
-idEntry = tkinter.Entry(window, font=('Verdana', 19, 'bold'))
+idEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 idEntry.grid(row=5, column=1)
 #name
-nameLabel = tkinter.Label(window, text="Type your name", font=('Verdana', 19, 'bold'), bg='#5FA8D3')
-nameLabel.grid(row=1, column=0, pady=20)
-nameEntry = tkinter.Entry(window, font=('Verdana', 19, 'bold'))
+nameLabel = tkinter.Label(window, text="Type your name", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
+nameLabel.grid(row=1, column=0, pady=10,padx=20)
+nameEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 nameEntry.grid(row=1, column=1)
 #age
-ageLabel = tkinter.Label(window, text="Type your age", font=('Verdana', 19, 'bold'), bg='#5FA8D3')
+ageLabel = tkinter.Label(window, text="Type your age", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
 ageLabel.grid(row=2, column=0, pady=20)
-ageEntry = tkinter.Entry(window, font=('Verdana', 19, 'bold'))
+ageEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 ageEntry.grid(row=2, column=1)
 #country
-countryLabel = tkinter.Label(window, text="Type your country", font=('Verdana', 19, 'bold'), bg='#5FA8D3')
+countryLabel = tkinter.Label(window, text="Type your country", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
 countryLabel.grid(row=3, column=0, pady=20)
-countryEntry = tkinter.Entry(window, font=('Verdana', 19, 'bold'))
+countryEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 countryEntry.grid(row=3, column=1)
 #phone
-phoneLabel = tkinter.Label(window, text="Type your phone", font=('Verdana', 19, 'bold'), bg='#5FA8D3')
+phoneLabel = tkinter.Label(window, text="Type your phone", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
 phoneLabel.grid(row=4, column=0, pady=20)
-phoneEntry = tkinter.Entry(window, font=('Verdana', 19, 'bold'))
+phoneEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 phoneEntry.grid(row=4, column=1)
 #date
-dateLabel = tkinter.Label(window, text="Type your date", font=('Verdana', 19, 'bold'), bg='#5FA8D3')
+dateLabel = tkinter.Label(window, text="Type your date", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
 dateLabel.grid(row=5, column=0, pady=20)
-dateEntry = tkinter.Entry(window, font=('Verdana', 19, 'bold'))
+dateEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 dateEntry.grid(row=5, column=1)
 #search
-searchLabel = tkinter.Label(window, text="Type your search", font=('Verdana', 19, 'bold'), bg='#5FA8D3')
+searchLabel = tkinter.Label(window, text="Type your search", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
 searchLabel.grid(row=6, column=0, pady=20)
-searchEntry = tkinter.Entry(window, font=('Verdana', 19, 'bold'))
+searchEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 searchEntry.grid(row=6, column=1)
 #buttons
-saveBtn = tkinter.Button(window, text="SAVE", font=('Verdana', 20, 'bold'), bg='#1B4965', fg='#FFFFFF', command=validateData)
-saveBtn.grid(row=6, column=1, pady=20)
+saveBtn = tkinter.Button(window, text="SAVE", font=('Verdana', 14, 'italic'), bg='#34495e', fg='#FFFFFF', command=validateData)
+saveBtn.grid(row=7, column=1, pady=20, sticky="E")
 
-searchBtn = tkinter.Button(window, text="🔎SEARCH", font=('Verdana', 14), bg='#F0E6EF', padx=20, command=searchData)
-searchBtn.grid(row=5, column=2, sticky="E")
+searchBtn = tkinter.Button(window, text="🔎SEARCH", font=('Verdana', 14), bg='#34495e', fg='#FFFFFF', command=searchData)
+searchBtn.grid(row=7, column=0, sticky="E", pady=20)
 window.mainloop()
 
 
