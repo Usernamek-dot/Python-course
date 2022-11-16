@@ -20,4 +20,10 @@ class Hotel:
           self.__spa =  spa
      def getParkingLot(self,parkingLot):
           self.__parkingLot =  parkingLot
-  
+        #delete
+     def delNRooms (self):
+          del self.__numRooms
+     def delSpa (self):
+          del self.__spa
+     def delParkingLot (self):
+          del self.__parkingLot  
