@@ -27,9 +27,11 @@ class Hotel:
           del self.__spa
      def delParkingLot (self):
           del self.__parkingLot  
+class HotelVIP (Hotel):
+     pass
+class HotelTurist(Hotel):
+     pass
 intercontinental = Hotel(850,False,"Two")
 miHotelito = Hotel(300,2,5) 
-print("Intercontinental   ")
-print(intercontinental.getInsurance())
-print(intercontinental.getParkingLot())
-print(miHotelito.getSpa())
+hotelL = HotelVIP()
+hotelHL= HotelTurist()
