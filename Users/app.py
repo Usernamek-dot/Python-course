@@ -11,23 +11,24 @@ def validateData():
      if idEntry.get() == ""  or nameEntry.get() == "" or ageEntry.get() == "" or countryEntry.get() == ""      or phoneEntry.get()=="" or dateEntry.get()=="":
           messagebox.showinfo(message="📛 Invalid data, make sure everything is filled out correctly.",title="Error")
      else:
+          # searchLabel['text'] = nameEntry.get()
           saveData()
 def saveData(): 
-    idd = idEntry.get()
+    idd = int(idEntry.get())
     name = nameEntry.get()
     age = int(ageEntry.get())
     country = countryEntry.get()
     phone = phoneEntry.get()
     date = datetime.datetime.now(pytz.timezone('America/Bogota'))
-    con = sqlite3.connect("Database.db")
+    con = sqlite3.connect("Users\Database.db")
     con.execute(
-        f"insert into Users(id,name,age,country,phone,date) values ('{idd}','{name}', {age}, {country}, '{phone}','{date}',)")
+        f"insert into Users(id,name,age,country,phone,date) values ({idd},'{name}', {age}, '{country}', '{phone}','{date}')")
     con.commit() 
     con.close() 
     readData() 
     messagebox.showinfo(message="👌🏼 Info saved.", title="Data Saved")
 def readData():
-    con = sqlite3.connect("Database.db")
+    con = sqlite3.connect("Users\Database.db")
     cur = con.cursor()
     for row in cur.execute('SELECT * FROM Users;'):
         print(row)
