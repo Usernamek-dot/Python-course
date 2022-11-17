@@ -8,11 +8,10 @@ window.geometry('560x600')
 window.title("USERS")
 window.configure(bg="#485460")
 def validateData():
-    if  idEntry.get().isdigit() or not nameEntry.get() == "" or not ageEntry.get().isdigit() or not countryEntry.get() or not phoneEntry.get().isdigit()or not dateEntry.get().isdigit() :
-        messagebox.showinfo(
-            message="📛 Invalid data, make sure everything is filled out correctly.", title="Error")
-    else:
-        saveData()
+     if idEntry.get() == ""  or nameEntry.get() == "" or ageEntry.get() == "" or countryEntry.get() == ""      or phoneEntry.get()=="" or dateEntry.get()=="":
+          messagebox.showinfo(message="📛 Invalid data, make sure everything is filled out correctly.",title="Error")
+     else:
+          saveData()
 def saveData(): 
     idd = idEntry.get()
     name = nameEntry.get()
@@ -38,6 +37,7 @@ def searchData():
         searchLabel['text'] = "😑Your id must be only numbers. "
         searchEntry.delete(0, tkinter.END) 
     else:
+        searchLabel['text'] = idEntry().get()
         con = sqlite3.connect("Database.db")
         cur = con.cursor()
         cur.execute(f"SELECT * FROM Users WHERE id = {searchEntry.get()}")
@@ -82,7 +82,7 @@ dateLabel.grid(row=6, column=0, pady=20)
 dateEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 dateEntry.grid(row=6, column=1)
 # #search
-searchLabel = tkinter.Label(window, text="Type your search", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
+searchLabel = tkinter.Label(window, text="", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
 searchLabel.grid(row=7, column=0, pady=20)
 searchEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 searchEntry.grid(row=7, column=1)
