@@ -4,19 +4,18 @@ import sqlite3
 import datetime
 import pytz
 window = tkinter.Tk()
-window.geometry('560x600') 
+window.geometry('600x600') 
 window.title("USERS")
 window.configure(bg="#485460")
 def validateData():
-     if idEntry.get() == ""  or nameEntry.get() == "" or ageEntry.get() == "" or countryEntry.get() == ""      or phoneEntry.get()=="" or dateEntry.get()=="":
+     if idEntry.get()==""  or nameEntry.get() == "" or ageEntry.get() == "" or countryEntry.get() == "" or phoneEntry.get()=="" or dateEntry.get()=="":
           messagebox.showinfo(message="📛 Invalid data, make sure everything is filled out correctly.",title="Error")
      else:
-          # searchLabel['text'] = nameEntry.get()
           saveData()
 def saveData(): 
-    idd = int(idEntry.get())
+    idd = idEntry.get()
     name = nameEntry.get()
-    age = int(ageEntry.get())
+    age = ageEntry.get()
     country = countryEntry.get()
     phone = phoneEntry.get()
     date = datetime.datetime.now(pytz.timezone('America/Bogota'))
@@ -35,22 +34,21 @@ def readData():
     con.close()
 def searchData():
     if not searchEntry.get().isdigit():
-        searchLabel['text'] = "😑Your id must be only numbers. "
+        outputMessage['text'] = "😑Your id must be only numbers. "
         searchEntry.delete(0, tkinter.END) 
     else:
-        searchLabel['text'] = idEntry().get()
-        con = sqlite3.connect("Database.db")
+        con = sqlite3.connect("Users\Database.db")
         cur = con.cursor()
         cur.execute(f"SELECT * FROM Users WHERE id = {searchEntry.get()}")
         row = cur.fetchone()
         if row != None:
             messagebox.showinfo(message=f"id: {row[0]},  Age: {row[1]}, Country: {row[2]}, Phone: {row[3]}, Date: {row[4]}", title="Record found")
-            searchLabel['text'] = ""
+            outputMessage['text'] = ""
         else:
-            searchLabel['text'] = "😲Not found."                
+            outputMessage['text'] = "😲Not found."                
         con.close()
 #ttitle
-titleLabel = tkinter.Label(window, text="Users Form", font=('Verdana', 20, 'bold'), bg='#485460',fg="#95a5a6")
+titleLabel = tkinter.Label(window, text="Form", font=('Verdana', 20, 'bold'), bg='#485460',fg="#95a5a6")
 titleLabel.grid(row=0, column=1, padx=20)
 #id
 idLabel = tkinter.Label(window, text="Type your id", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
@@ -90,10 +88,13 @@ searchEntry.grid(row=7, column=1)
 #buttons
 saveBtn = tkinter.Button(window, text="SAVE", font=('Verdana', 14, 'italic'), bg='#34495e', fg='#FFFFFF', command=validateData)
 saveBtn.grid(row=8, column=1, pady=20, sticky="E")
-
-searchBtn = tkinter.Button(window, text="🔎SEARCH", font=('Verdana', 14), bg='#34495e', fg='#FFFFFF')
-searchBtn.grid(row=7, column=0, sticky="E", pady=20)
+searchBtn = tkinter.Button(window, text="🔎SEARCH ID", font=('Verdana', 14), bg='#34495e', fg='#FFFFFF',command=searchData)
+searchBtn.grid(row=7, column=0, pady=20)
+# message
+outputMessage = tkinter.Label(window, text="", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
+outputMessage.grid(row=8, column=0 ,pady=20)
 window.mainloop()
+
 
 
 
