@@ -10,7 +10,7 @@ window.configure(bg="#485460")
 def validateData():
     if  idEntry.get().isdigit() or not nameEntry.get() == "" or not ageEntry.get().isdigit() or not countryEntry.get() or not phoneEntry.get().isdigit()or not dateEntry.get().isdigit() :
         messagebox.showinfo(
-            message="📛 Invalid data, make sure everything is filled out.", title="Error")
+            message="📛 Invalid data, make sure everything is filled out correctly.", title="Error")
     else:
         saveData()
 def saveData(): 
@@ -82,15 +82,15 @@ dateLabel.grid(row=6, column=0, pady=20)
 dateEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
 dateEntry.grid(row=6, column=1)
 # #search
-# searchLabel = tkinter.Label(window, text="Type your search", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
-# searchLabel.grid(row=7, column=0, pady=20)
-# searchEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
-# searchEntry.grid(row=7, column=1)
+searchLabel = tkinter.Label(window, text="Type your search", font=('Verdana', 15, 'italic'), bg='#485460',fg="#bdc3c7")
+searchLabel.grid(row=7, column=0, pady=20)
+searchEntry = tkinter.Entry(window, font=('Verdana', 15, 'italic'))
+searchEntry.grid(row=7, column=1)
 #buttons
 saveBtn = tkinter.Button(window, text="SAVE", font=('Verdana', 14, 'italic'), bg='#34495e', fg='#FFFFFF', command=validateData)
-saveBtn.grid(row=7, column=1, pady=20, sticky="E")
+saveBtn.grid(row=8, column=1, pady=20, sticky="E")
 
-searchBtn = tkinter.Button(window, text="🔎SEARCH", font=('Verdana', 14), bg='#34495e', fg='#FFFFFF', command=searchData)
+searchBtn = tkinter.Button(window, text="🔎SEARCH", font=('Verdana', 14), bg='#34495e', fg='#FFFFFF')
 searchBtn.grid(row=7, column=0, sticky="E", pady=20)
 window.mainloop()
 
