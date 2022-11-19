@@ -3,7 +3,7 @@ import sqlite3
 import datetime
 import pytz
 from tkinter import messagebox
-from defs import *
+# from defs import *
 
 window = tkinter.Tk()
 window.geometry('630x630') 
