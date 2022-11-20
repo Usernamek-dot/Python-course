@@ -1,4 +1,4 @@
-from app import df
+from products import df
 def readRecord(name,lastname,mark1,mark2,mark3,mark4):
      print(f"Full name:  {name.upper()} {lastname.upper()} ")
      print(f"Grade1 {round(mark1,1)} ")
